@@ -9,23 +9,14 @@ public class ChecklistFollow : MonoBehaviour
 
     private bool isCentered = false;
 
-    public Material originalMaterial;
-    public connectIV connectIV;
-    private Renderer objectRenderer;
-
-  
-    public Material ivDone;
-    public Material nasalDone;
-    public Material oxyDone;
-    public Material allDone;
+ 
     private void OnBecameInvisible()
     {
         isCentered = false;
     }
     private void Start()
     {
-        objectRenderer = GetComponent<MeshRenderer>();
-        originalMaterial = objectRenderer.material;
+        
     }
 
     // Update is called once per frame
@@ -40,10 +31,7 @@ public class ChecklistFollow : MonoBehaviour
             isCentered = true;
         }
 
-        else if (connectIV.x==1)
-        {
-            objectRenderer.material = ivDone;
-        }
+      
     }
 
     private Vector3 FindTargetPosition()
