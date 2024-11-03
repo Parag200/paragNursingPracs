@@ -9,6 +9,10 @@ public class NasalSpray : MonoBehaviour
 
     private XRGrabInteractable grabInteractable;
     private bool isGrabbed = false;
+    private int sprayCount = 0; // Count of sprays used
+    [SerializeField] private int maxSprays = 3; // Maximum number of sprays allowed
+    [SerializeField] private float sprayCooldown = 1f; // Cooldown time in seconds
+    private float lastSprayTime = 0f; // Time when the last spray occurred
 
     private enum ControllerSide
     {
@@ -51,10 +55,12 @@ public class NasalSpray : MonoBehaviour
         bool primaryButtonDown = false;
         device.TryGetFeatureValue(CommonUsages.primaryButton, out primaryButtonDown);
 
-        // Play the particle system if grabbed and the button is pressed
-        if (isGrabbed && primaryButtonDown)
+        // Check if conditions for spraying are met
+        if (isGrabbed && primaryButtonDown && sprayCount < maxSprays && Time.time >= lastSprayTime + sprayCooldown)
         {
             PlayParticleSystem();
+            sprayCount++;
+            lastSprayTime = Time.time; // Update the last spray time
         }
     }
 
@@ -66,6 +72,7 @@ public class NasalSpray : MonoBehaviour
     private void OnRelease(XRBaseInteractor interactor)
     {
         isGrabbed = false;
+        sprayCount = 0; // Reset the spray count when released
     }
 
     private void PlayParticleSystem()
