@@ -1481,6 +1481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spray: {fileID: 1554057875}
+  m_controller: 1
 --- !u!1 &743976141
 GameObject:
   m_ObjectHideFlags: 0
