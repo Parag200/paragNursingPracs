@@ -6,10 +6,13 @@ public class SwapMats : MonoBehaviour
 {
 
     public Material current;
-    public Material newMat;
+    public Material IVcheck;
+    public Material NitroCheck;
+    public Material NitroIVCheck;
     private Renderer objectRenderer;
 
     public connectIV connectIV;
+    public sprayHIT sprayHIT;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +25,19 @@ public class SwapMats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (connectIV.x==1)
+        if (connectIV.conectIVin == true)
         {
-            objectRenderer.material = newMat;
+            objectRenderer.material = IVcheck;
+        }
+
+        if (sprayHIT.sprayNitro == true)
+        {
+            objectRenderer.material = NitroCheck;
+        }
+
+        if (connectIV.conectIVin == true && sprayHIT.sprayNitro == true)
+        {
+            objectRenderer.material = NitroIVCheck;
         }
     }
 }

@@ -5,13 +5,13 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class connectIV : MonoBehaviour
 {
-    public int x = 0;
+    public bool conectIVin = false;
     private void OnTriggerEnter(Collider other)
     {
        
         if (other.gameObject.CompareTag("IV"))
-        { 
-            x = 1;
+        {
+            conectIVin = true;
         }
     }
 
