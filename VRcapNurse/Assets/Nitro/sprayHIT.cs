@@ -5,6 +5,7 @@ using UnityEngine;
 public class sprayHIT : MonoBehaviour
 {
     public bool sprayNitro = false;
+    public GameObject NitroSphere;
 
 
     private void OnParticleCollision(GameObject other)
@@ -12,6 +13,7 @@ public class sprayHIT : MonoBehaviour
         if (other.gameObject.CompareTag("Mouth"))
         {
             sprayNitro = true;
+            NitroSphere.SetActive(false);
         }
     }
 }
