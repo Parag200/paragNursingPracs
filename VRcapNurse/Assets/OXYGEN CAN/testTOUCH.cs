@@ -4,11 +4,15 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace UnityEngine.XR.Content.Interaction
 {
+
     /// <summary>
     /// An interactable knob that follows the rotation of the interactor
     /// </summary>
     public class testTOUCH : XRBaseInteractable
     {
+        public GameObject ball;
+
+
         const float k_ModeSwitchDeadZone = 0.1f; // Prevents rapid switching between the different rotation tracking modes
 
         /// <summary>
@@ -336,6 +340,13 @@ namespace UnityEngine.XR.Content.Interaction
             SetValue(knobValue);
         }
 
+
+        Vector3 basePosition = new Vector3(-0.000999998301f, 0.924f, 1.457f);
+        public Vector3 position1L;
+        public Vector3 position2L;
+        public Vector3 position3L;
+        public Vector3 position4L;
+
         void SetKnobRotation(float angle)
         {
             if (m_AngleIncrement > 0)
@@ -348,7 +359,40 @@ namespace UnityEngine.XR.Content.Interaction
             if (m_Handle != null)
             {
                 // Set the handle's rotation relative to the base (90, 0, 0)
-                m_Handle.localRotation = Quaternion.Euler(-angle, -90.0f,-90.0f); // Adjust for the knob's rotation
+                m_Handle.localRotation = Quaternion.Euler(-angle, -90.0f, -90.0f); // Adjust for the knob's rotation
+            }
+
+            // Now translate the ball's y position based on the angle, relative to its current position in the world space
+            if (ball != null)
+            {
+                // Get the ball's current position in the world space
+                Vector3 ballPosition = ball.transform.position;
+
+                // Set the ball's position based on the angle
+                if (angle == 90f)
+                {
+                    ballPosition = position1L;
+                }
+                else if (angle == 180f)
+                {
+                    ballPosition = position2L;
+                }
+                else if (angle == 270f)
+                {
+                    ballPosition = position3L;
+                }
+                else if (angle == 360f)
+                {
+                    ballPosition = position4L;
+                }
+                else
+                {
+                    // If the angle doesn't match 90, 180, or 270, keep the ball at the base position
+                    ballPosition = basePosition;
+                }
+
+                // Apply the new position to the ball
+                ball.transform.position = ballPosition;
             }
         }
 
