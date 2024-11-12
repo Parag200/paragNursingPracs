@@ -9,6 +9,9 @@ TagManager:
   - Mouth
   - Grabbable
   - Knob
+  - Nasal
+  - LeftEar
+  - RightEar
   layers:
   - Default
   - TransparentFX

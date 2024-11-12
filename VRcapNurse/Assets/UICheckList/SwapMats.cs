@@ -9,10 +9,14 @@ public class SwapMats : MonoBehaviour
     public Material IVcheck;
     public Material NitroCheck;
     public Material NitroIVCheck;
+    public Material AllDONE;
     private Renderer objectRenderer;
 
     public connectIV connectIV;
     public sprayHIT sprayHIT;
+    public RightEarBool RightEarBool;
+    public LeftEarBool LeftEarBool;
+    public NasalBool NasalBool;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,5 +43,18 @@ public class SwapMats : MonoBehaviour
         {
             objectRenderer.material = NitroIVCheck;
         }
+
+        if (LeftEarBool==true && RightEarBool==true)
+        {
+            if ( NasalBool == true)
+            {
+                //objectRenderer.material = AllDONE;
+            }
+                
+            
+          
+        }
+
+
     }
 }

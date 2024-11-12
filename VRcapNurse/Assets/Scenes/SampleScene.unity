@@ -1345,7 +1345,7 @@ GameObject:
   - component: {fileID: 232810511}
   m_Layer: 0
   m_Name: NosePiece
-  m_TagString: Untagged
+  m_TagString: Nasal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2706,8 +2706,12 @@ MonoBehaviour:
   IVcheck: {fileID: 2100000, guid: 92686d57521573e4d8a19953b5ae3072, type: 2}
   NitroCheck: {fileID: 2100000, guid: ddd8ac297b4cf834695f65246a58e3d2, type: 2}
   NitroIVCheck: {fileID: 2100000, guid: 91ecc4a6c7314624d99a01f1757bb20a, type: 2}
+  AllDONE: {fileID: 2100000, guid: 8c2de32e11503114084be6ec2fdf53a3, type: 2}
   connectIV: {fileID: 407047634}
   sprayHIT: {fileID: 259254778}
+  RightEarBool: {fileID: 443702962}
+  LeftEarBool: {fileID: 1656212299}
+  NasalBool: {fileID: 1631463807}
 --- !u!1 &370708995
 GameObject:
   m_ObjectHideFlags: 0
@@ -3856,6 +3860,7 @@ GameObject:
   - component: {fileID: 443702959}
   - component: {fileID: 443702958}
   - component: {fileID: 443702961}
+  - component: {fileID: 443702962}
   m_Layer: 0
   m_Name: LeftEar
   m_TagString: Untagged
@@ -4009,6 +4014,19 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &443702962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443702956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bfce73dbbd5ab54b9a5cfddb93dc078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RightEarin: 0
 --- !u!1001 &459028808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13154,6 +13172,7 @@ GameObject:
   - component: {fileID: 1631463804}
   - component: {fileID: 1631463803}
   - component: {fileID: 1631463806}
+  - component: {fileID: 1631463807}
   m_Layer: 0
   m_Name: NosePiece
   m_TagString: Untagged
@@ -13307,6 +13326,19 @@ MonoBehaviour:
   m_SocketScaleMode: 2
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 2, y: 2, z: 2}
+--- !u!114 &1631463807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631463801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35014ca3c8f107c4eb48ab2f2155e068, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nasalin: 0
 --- !u!1 &1656212293
 GameObject:
   m_ObjectHideFlags: 0
@@ -13320,6 +13352,7 @@ GameObject:
   - component: {fileID: 1656212296}
   - component: {fileID: 1656212295}
   - component: {fileID: 1656212298}
+  - component: {fileID: 1656212299}
   m_Layer: 0
   m_Name: RightEar
   m_TagString: Untagged
@@ -13473,6 +13506,19 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!114 &1656212299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656212293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b0e1a7a3ee52e74b9872c4561414010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LeftEarin: 0
 --- !u!1 &1712264956
 GameObject:
   m_ObjectHideFlags: 0
@@ -14036,7 +14082,7 @@ GameObject:
   - component: {fileID: 1747601546}
   m_Layer: 0
   m_Name: LeftEar
-  m_TagString: Untagged
+  m_TagString: RightEar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14748,7 +14794,7 @@ GameObject:
   - component: {fileID: 1908391568}
   m_Layer: 0
   m_Name: RightEar
-  m_TagString: Untagged
+  m_TagString: LeftEar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
