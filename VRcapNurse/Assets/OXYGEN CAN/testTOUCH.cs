@@ -11,7 +11,11 @@ namespace UnityEngine.XR.Content.Interaction
     public class testTOUCH : XRBaseInteractable
     {
         public GameObject ball;
-
+        Vector3 basePosition = new Vector3(-0.000999998301f, 0.924f, 1.457f);
+        public Vector3 position1L;
+        public Vector3 position2L;
+        public Vector3 position3L;
+        public Vector3 position4L;
 
         const float k_ModeSwitchDeadZone = 0.1f; // Prevents rapid switching between the different rotation tracking modes
 
@@ -198,6 +202,8 @@ namespace UnityEngine.XR.Content.Interaction
 
         void Start()
         {
+            ball.transform.position = basePosition;
+
             // Set the handle's initial rotation to (90, 0, 0)
             if (m_Handle != null)
             {
@@ -341,14 +347,11 @@ namespace UnityEngine.XR.Content.Interaction
         }
 
 
-        Vector3 basePosition = new Vector3(-0.000999998301f, 0.924f, 1.457f);
-        public Vector3 position1L;
-        public Vector3 position2L;
-        public Vector3 position3L;
-        public Vector3 position4L;
+      
 
         void SetKnobRotation(float angle)
         {
+            
             if (m_AngleIncrement > 0)
             {
                 var normalizeAngle = angle - m_MinAngle;
