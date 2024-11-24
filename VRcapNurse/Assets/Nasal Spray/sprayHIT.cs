@@ -6,20 +6,33 @@ public class sprayHIT : MonoBehaviour
 {
     public bool sprayNitro = false;
     public GameObject NitroSphere;
+    public Material newMaterial;  // Add a public Material variable to hold the new material
+    public GameObject thisOBJ;
 
+    public int NitroScore = 0;
 
     private void OnParticleCollision(GameObject other)
     {
         if (other.gameObject.CompareTag("Mouth"))
         {
+            NitroScore = NitroScore + 1;
             sprayNitro = true;
             NitroSphere.SetActive(false);
         }
 
         if (other.gameObject.CompareTag("MouthWrong"))
         {
+            NitroScore = 0;
             sprayNitro = false;
             NitroSphere.SetActive(false);
+        }
+
+        // Change the material of the object that triggered the collider
+        Renderer objRenderer = thisOBJ.gameObject.GetComponent<Renderer>();
+
+        if (objRenderer != null)
+        {
+            objRenderer.material = newMaterial;  // Change the material to the new one
         }
     }
 }

@@ -4,47 +4,74 @@ using UnityEngine;
 
 public class SwapMats : MonoBehaviour
 {
+    public GameObject list;
 
-    public Material current;
-    public Material IVcheck;
-    public Material NitroCheck;
-    public Material NitroIVCheck;
-    public Material AllDONE;
+    public Material IvChecklist;
+    public Material IvChecklistDONE;
+    public Material NitroChecklistDONE;
+    public Material ALLDONE;
     private Renderer objectRenderer;
 
     public connectIV connectIV;
     public sprayHIT sprayHIT;
-    public RightEarBool RightEarBool;
     public LeftEarBool LeftEarBool;
+    public RightEarBool RightEarBool;
     public NasalBool NasalBool;
+
+    private int x = 0;
+
+    
+
+    public int scoreNasal =0;
     // Start is called before the first frame update
     void Start()
     {
+     
         // Get the Renderer component from the GameObject
         objectRenderer = GetComponent<Renderer>();
         // Set the initial material
-        objectRenderer.material = current;
+        objectRenderer.material = IvChecklist;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (connectIV.conectIVin == true)
+
+ 
+        if (connectIV.conectIVin==true)
         {
-            objectRenderer.material = IVcheck;
+            objectRenderer.material = IvChecklistDONE;
         }
 
-        if (sprayHIT.sprayNitro == true)
+        if (sprayHIT.sprayNitro==true)
         {
-            objectRenderer.material = NitroCheck;
+            objectRenderer.material = NitroChecklistDONE;
+        }
+      
+        if (NasalBool.Nasalin==true)
+        {
+            x = x + 1;
         }
 
-        if (connectIV.conectIVin == true && sprayHIT.sprayNitro == true)
+
+        if (RightEarBool.RightEarin == true)
         {
-            objectRenderer.material = NitroIVCheck;
+            x = x + 1;
         }
 
-       
+
+        if (LeftEarBool.LeftEarin == true)
+        {
+            x = x + 1;
+        }
+
+        if (x==3)
+        {
+            objectRenderer.material = ALLDONE;
+            scoreNasal = 3;
+        }
+
+        
 
 
     }

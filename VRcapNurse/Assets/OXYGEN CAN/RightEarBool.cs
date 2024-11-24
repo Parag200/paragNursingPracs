@@ -5,6 +5,8 @@ using UnityEngine;
 public class RightEarBool : MonoBehaviour
 {
     public bool RightEarin = false;
+    public Material newMaterial;  // Add a public Material variable to hold the new material
+    public GameObject thisOBJ;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +14,13 @@ public class RightEarBool : MonoBehaviour
         if (other.gameObject.CompareTag("RightEar"))
         {
             RightEarin = true;
+            // Change the material of the object that triggered the collider
+            Renderer objRenderer = thisOBJ.gameObject.GetComponent<Renderer>();
+
+            if (objRenderer != null)
+            {
+                objRenderer.material = newMaterial;  // Change the material to the new one
+            }
 
         }
     }

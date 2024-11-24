@@ -2,28 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LeftEarBool : MonoBehaviour
+public class BottomConnector : MonoBehaviour
 {
-    public bool LeftEarin = false;
+    public bool conectOXY = false;
+    public GameObject oxybottom;
     public Material newMaterial;  // Add a public Material variable to hold the new material
-    public GameObject thisOBJ;
 
-    
+    public int OXYscore = 0;
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.gameObject.CompareTag("LeftEar"))
+        if (other.gameObject.CompareTag("Bottom"))
         {
-            LeftEarin = true;
+            OXYscore = OXYscore + 1;
+            conectOXY = true; 
+
             // Change the material of the object that triggered the collider
-            Renderer objRenderer = thisOBJ.gameObject.GetComponent<Renderer>();
+            Renderer objRenderer = oxybottom.gameObject.GetComponent<Renderer>();
 
             if (objRenderer != null)
             {
                 objRenderer.material = newMaterial;  // Change the material to the new one
             }
-
         }
     }
 }

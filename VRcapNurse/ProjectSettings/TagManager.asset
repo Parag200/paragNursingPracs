@@ -13,6 +13,11 @@ TagManager:
   - LeftEar
   - RightEar
   - MouthWrong
+  - Hands
+  - Task1
+  - Task2
+  - Task3
+  - Bottom
   layers:
   - Default
   - TransparentFX
@@ -20,7 +25,7 @@ TagManager:
   - Box
   - Water
   - UI
-  - 
+  - GROUND
   - 
   - 
   - 
