@@ -11,7 +11,7 @@ namespace UnityEngine.XR.Content.Interaction
     public class testTOUCH : XRBaseInteractable
     {
         public GameObject ball;
-        Vector3 basePosition = new Vector3(-0.000999998301f, 0.924f, 1.457f);
+        Vector3 basePosition = new Vector3(-0.548799992f, 1.14129996f, 1.107f);
         public Vector3 position1L;
         public Vector3 position2L;
         public Vector3 position3L;

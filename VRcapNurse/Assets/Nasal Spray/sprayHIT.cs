@@ -15,5 +15,11 @@ public class sprayHIT : MonoBehaviour
             sprayNitro = true;
             NitroSphere.SetActive(false);
         }
+
+        if (other.gameObject.CompareTag("MouthWrong"))
+        {
+            sprayNitro = false;
+            NitroSphere.SetActive(false);
+        }
     }
 }

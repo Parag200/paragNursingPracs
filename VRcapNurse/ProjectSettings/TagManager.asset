@@ -12,6 +12,7 @@ TagManager:
   - Nasal
   - LeftEar
   - RightEar
+  - MouthWrong
   layers:
   - Default
   - TransparentFX
