@@ -44,16 +44,7 @@ public class SwapMats : MonoBehaviour
             objectRenderer.material = NitroIVCheck;
         }
 
-        if (LeftEarBool==true && RightEarBool==true)
-        {
-            if ( NasalBool == true)
-            {
-                //objectRenderer.material = AllDONE;
-            }
-                
-            
-          
-        }
+       
 
 
     }
