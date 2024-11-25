@@ -18,6 +18,9 @@ public class SwapMats : MonoBehaviour
     public RightEarBool RightEarBool;
     public NasalBool NasalBool;
 
+    public bool isdone = false;
+
+
     private int x = 0;
 
     
@@ -65,10 +68,11 @@ public class SwapMats : MonoBehaviour
             x = x + 1;
         }
 
-        if (x==3)
+        if (x>= 3)
         {
             objectRenderer.material = ALLDONE;
             scoreNasal = 3;
+            isdone = true;
         }
 
         

@@ -9,10 +9,11 @@ public class BottomConnector : MonoBehaviour
     public Material newMaterial;  // Add a public Material variable to hold the new material
 
     public int OXYscore = 0;
+    bool doneONCE = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Bottom"))
+        if (other.gameObject.CompareTag("Bottom") && doneONCE == false)
         {
             OXYscore = OXYscore + 1;
             conectOXY = true; 
@@ -24,6 +25,7 @@ public class BottomConnector : MonoBehaviour
             {
                 objRenderer.material = newMaterial;  // Change the material to the new one
             }
+            doneONCE = true;
         }
     }
 }

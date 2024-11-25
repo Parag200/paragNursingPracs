@@ -11,13 +11,17 @@ public class sprayHIT : MonoBehaviour
 
     public int NitroScore = 0;
 
+    bool doneONCE = false;
+
     private void OnParticleCollision(GameObject other)
     {
-        if (other.gameObject.CompareTag("Mouth"))
+    
+        if (other.gameObject.CompareTag("Mouth") &&  doneONCE==false)
         {
             NitroScore = NitroScore + 1;
             sprayNitro = true;
             NitroSphere.SetActive(false);
+            doneONCE = true;
         }
 
         if (other.gameObject.CompareTag("MouthWrong"))

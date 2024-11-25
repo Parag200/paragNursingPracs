@@ -9,6 +9,7 @@ public class CheckLOC : MonoBehaviour
     Vector3 ThreeLit = new Vector3(-0.548799992f, 1.489f, 1.107f);
 
     public int ballScore = 0;
+    bool doneONCE = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,10 @@ public class CheckLOC : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ball.transform.position==ThreeLit)
+        if (ball.transform.position==ThreeLit && doneONCE == false)
         {
             ballScore = ballScore + 1;
+            doneONCE = true;
         }
     }
 }

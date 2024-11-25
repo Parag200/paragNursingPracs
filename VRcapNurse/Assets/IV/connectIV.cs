@@ -10,10 +10,11 @@ public class connectIV : MonoBehaviour
     public Material newMaterial;  // Add a public Material variable to hold the new material
 
     public int IVscore = 0;
+    bool doneONCE = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("IV"))
+        if (other.gameObject.CompareTag("IV") && doneONCE==false)
         {
             IVscore = IVscore + 1;
             conectIVin = true;
@@ -25,6 +26,8 @@ public class connectIV : MonoBehaviour
             {
                 objRenderer.material = newMaterial;  // Change the material to the new one
             }
+
+            doneONCE = true;
         }
     }
 }
