@@ -68,7 +68,7 @@ public class SwapMats : MonoBehaviour
             x = x + 1;
         }
 
-        if (x>= 3)
+        if (x>=2)
         {
             objectRenderer.material = ALLDONE;
             scoreNasal = 3;
